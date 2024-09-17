@@ -1,4 +1,5 @@
-public enum{
+from enum import Enum
+public Enum states{
     Baby,
     Child, 
     Teenager,
@@ -7,14 +8,15 @@ public enum{
     Special
 }
 class Pet():
-    def __init__(self, counter, state, hunger, happiness, training, sickness, MAX_LIMIT_MEAL):
+    def __init__(self, counter, state, hunger, happiness, training, sickness, states.state):
         self.counter = counter
         self.state = state
         self.hunger = hunger
         self.happiness = happiness
         self.training = training
         self.sickness = sickness
-        self.MAX_LIMIT_MEAL = MAX_LIMIT_MEAL
+        self.MAX_LIMIT_MEAL = 3
+        self.state = state
 
     def eat(self):
         pass
