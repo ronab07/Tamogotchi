@@ -1,12 +1,12 @@
 from enum import Enum
-public Enum states{
+class states(Enum):
     Baby,
     Child, 
     Teenager,
     Adult,
     Senior,
     Special
-}
+    
 class Pet():
     def __init__(self, state, hunger, happiness, training, sickness, states.state):
         self.counter = 0
