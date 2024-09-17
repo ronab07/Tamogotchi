@@ -1,5 +1,5 @@
 from enum import Enum
-class states(Enum):
+class States(Enum):
     Baby = 1
     Child = 2
     Teenager = 3
