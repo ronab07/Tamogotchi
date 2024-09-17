@@ -6,6 +6,7 @@ class States(Enum):
     Adult = 4
     Senior = 5
     Special = 6
+    Dead = 7
     
 class Pet():
     def __init__(self, state: States, hunger: int, happiness: int, training: int, sickness: int):
