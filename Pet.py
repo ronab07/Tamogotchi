@@ -1,7 +1,12 @@
-from abc import ABC, abstractmethod
-
-
-class Pet(ABC):
+public enum{
+    Baby,
+    Child, 
+    Teenager,
+    Adult,
+    Senior,
+    Special
+}
+class Pet():
     def __init__(self, counter, state, hunger, happiness, training, sickness, MAX_LIMIT_MEAL):
         self.counter = counter
         self.state = state
@@ -22,3 +27,4 @@ class Pet(ABC):
 
     def exercise(self):
         pass
+
