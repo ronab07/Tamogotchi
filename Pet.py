@@ -8,8 +8,8 @@ public Enum states{
     Special
 }
 class Pet():
-    def __init__(self, counter, state, hunger, happiness, training, sickness, states.state):
-        self.counter = counter
+    def __init__(self, state, hunger, happiness, training, sickness, states.state):
+        self.counter = 0
         self.state = state
         self.hunger = hunger
         self.happiness = happiness
