@@ -17,7 +17,6 @@ class Pet():
         self.training = training
         self.sickness = sickness
         self.MAX_LIMIT_MEAL = 3
-        self.state = state
 
     def eat(self):
         pass
