@@ -30,3 +30,6 @@ class Pet():
     def exercise(self):
         pass
 
+    def snack(self):
+        pass
+

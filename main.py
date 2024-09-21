@@ -1,16 +1,15 @@
-# This is a sample Python script.
+from Command import EatCommand, PlayCommand, SleepCommand, ExerciseCommand
+from OverviewFactory import FactoryOverview
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+if __name__ == "__main__":
+    # Create a pet using the Factory
+    factory = FactoryOverview()
+    # my_pet = factory.create_pet()
+    #
+    # # Create commands for the pet
+    # eat_command = EatCommand(my_pet)
+    # play_command = PlayCommand(my_pet)
+    # sleep_command = SleepCommand(my_pet)
+    # exercise_command = ExerciseCommand(my_pet)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
