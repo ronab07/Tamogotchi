@@ -1,4 +1,5 @@
 from distutils.command.config import config
+from os import remove
 
 from Command import EatCommand, PlayCommand, SleepCommand, ExerciseCommand, FeedSnackCommand
 from CommandRemote import CommandRemote
@@ -40,7 +41,7 @@ def main():
             break
         else:
             print("Wrong input, try again")
-
+        remote.execute_commands()
 
 if __name__ == "__main__":
     main()
