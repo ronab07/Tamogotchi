@@ -40,6 +40,7 @@ def main():
             break
         else:
             print("Wrong input, try again")
+        remote.execute_commands()
 
 
 if __name__ == "__main__":
