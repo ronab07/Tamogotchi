@@ -9,3 +9,4 @@ class CommandRemote:
         for command in self.commands:
             command.execute()
         self.commands = []  # Clear the commands after execution
+

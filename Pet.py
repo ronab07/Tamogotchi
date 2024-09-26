@@ -11,7 +11,7 @@ class States(Enum):
 class Pet:
     def __init__(self, name: str):
         self.counter = 0
-        self.state = "Baby"
+        self.state = States.Baby
         self.hunger = 30
         self.happiness = 100
         self.training = 20
@@ -24,18 +24,19 @@ class Pet:
         self.EX_COUNT = 0
 
     def eat(self):
-        if MAX_LIMIT_MEAL != 0:
+        if self.MAX_LIMIT_MEAL != 0:
             self.hunger += 10
-            MAX_LIMIT_MEAL -=1
+            self.MAX_LIMIT_MEAL -=1
             self.counter +=1
             self.weight += 0.5
-            self.update_state()
+        else:
+            print("You've exceeded your daily serving")
+        self.update_state()
 
     def play(self):
         self.happiness += 15
         self.counter +=1
         self.update_state()
-
 
     def sleep(self):
         self.happiness += 5
@@ -43,53 +44,53 @@ class Pet:
         self.counter +=1
         self.update_state()
 
-
     def exercise(self):
-        EX_COUNT +=1
+        self.EX_COUNT +=1
         self.counter +=1
         self.sickness -=6
         self.weight -=0.5
-        if EX_COUNT>3:
+        if self.EX_COUNT>3:
             self.sickness +=15
         self.update_state()
 
-
     def snack(self):
-        SNACK_COUNT += 1
+        self.SNACK_COUNT += 1
         self.happiness += 8
         self.hunger += 5
         self.counter +=1
         self.weight += 0.2
-        if SNACK_COUNT>3:
+        if self.SNACK_COUNT>3:
             self.sickness += 7
         self.update_state()
 
 
     def check_age_and_weight(self):
-        return "This tamagotchi's {self.name}\nweight is: {self.weight} \nage is: {self.age}"
+        return f"This tamagotchi {self.name}\nweight is: {self.weight} \nage is: {self.age}"
 
     def update_state(self):
-        if  (self.hunger < 3 || self.happiness < 3 ||self.training < 3 || self.weight <5):
+        # control growth of tamgotchi based on settings
+        if  self.hunger < 3 or self.happiness < 3 or self.training < 3 or self.weight <5:
             self.sickness += 20
-        if (self.sickness >= 50 || self.counter > 376):
-            self.state = "Dead" 
-            print("OH NO!!!!! your tamagotchi is dead")
+        if self.sickness >= 50 or self.counter > 376:
+            self.state = States.Dead
+            print("OH NO!!!!! your tamagotchi is dead, write exit")
         elif self.counter > 333:
-            self.state = "Senior"
+            self.state = States.Senior
             self.weight -= 5
+            self.age += 20
             print("you are now a senior!!!!")
         elif self.counter > 247:
-            self.state = "Adult"
+            self.state = States.Adult
             self.weight += 13
+            self.age += 10
             print("you are now an adult!!!!")
         elif self.counter > 139:
-            self.state = "Teenager"
+            self.state = States.Teenager
             self.weight += 20
+            self.age += 10
             print("you are now a teenager!!!!")
-        elif self.counter > 56:
-            self.state = "Child"
+        elif self.counter > 5:
+            self.state = States.Child
             self.weight += 15
+            self.age += 5
             print("you are now a child!!!!")
-        
-        # פונקציה שקוראים לה מתוך הפעולות של המשחק, אכילה וכו, משנה את המצב לפי המדדים השונים
-        return

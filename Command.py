@@ -40,3 +40,10 @@ class FeedSnackCommand(Command):
 
     def execute(self):
         self.tamagotchi.snack()
+
+class CheckWeightAgeCommand(Command):
+    def __init__(self, tamgotchi):
+        self.tamgotchi = tamgotchi
+
+    def execute(self):
+        print(self.tamgotchi.check_age_and_weight())
