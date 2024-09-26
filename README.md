@@ -1,2 +1,2 @@
 Special Tamagotchi game
-![WhatsApp Image 2024-09-21 at 16 15 02](https://github.com/user-attachments/assets/ab4d8545-1d96-4817-ae42-79ee827924b3)
+![WhatsApp Image 2024-09-23 at 17 02 06](https://github.com/user-attachments/assets/77ebbf36-4c30-4547-8704-7b664a06a76d)
